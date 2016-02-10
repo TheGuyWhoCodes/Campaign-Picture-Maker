@@ -6,22 +6,31 @@ import PIL.Image
 from Tkinter import *
 
 bg_size   = [1080,1920]
-logo_size = [255,1000]
+logo_size = [200,200]
 
-root = Tk()
-root.title("Campaign photo editor")
-root.geometry("500x500")
+##root = Tk()
+##root.title("Campaign photo editor")
+##root.geometry("500x500")
 
-root.mainloop()
+##root.mainloop()
+
+
+
 
 def test():
     background = PIL.Image.open("photo.png")
-    logo = PIL.Image.open("66.png")
+    png = PIL.Image.open("banner.png")
+    png.load()
 
-    background_small = logo.resize(bg_size)
-    logo_small = logo.resize(logo_size)
+    alpha = png.split()[.2]
+    png.putalpha(alpha)
+    png.split()[3]
     
-    background.paste(logo_small, (0, 600), logo_small)
+    new_png = png.resize((1000, 500), PIL.Image.ANTIALIAS)
+    background.resize(bg_size)
+    
+    background.paste(new_png, (0,600), new_png) # 3 is the alpha channel
+    
+    background.save('poop.jpg', 'JPEG', quality=100)
+    
     background.show()
-    
-    background.save('out.png')
