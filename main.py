@@ -14,23 +14,19 @@ logo_size = [200,200]
 
 ##root.mainloop()
 
-
+seal = 0
 
 
 def test():
-    background = PIL.Image.open("photo.png")
-    png = PIL.Image.open("banner.png")
-    png.load()
-
-    alpha = png.split()[.2]
-    png.putalpha(alpha)
-    png.split()[3]
+    img = PIL.Image.open('seal.png')
+    img2 = PIL.Image.open('photo.png')
+    img_w, img_h = img.size
     
-    new_png = png.resize((1000, 500), PIL.Image.ANTIALIAS)
-    background.resize(bg_size)
+    if seal == 0:
+        print("We converting a banner its lit")
+    else:
+        print("We are converting a seal over here")
     
-    background.paste(new_png, (0,600), new_png) # 3 is the alpha channel
-    
-    background.save('poop.jpg', 'JPEG', quality=100)
-    
-    background.show()
+    offset = (0,780)
+    img2.paste(img, offset)
+    img2.save('out.png')
