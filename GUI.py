@@ -162,7 +162,8 @@ class TheGui:
             new_main.show()
         os.remove("new_logo.png") 
         os.remove("main_image.png") 
-    
+        
 root = Tk()
+root.wm_title("Campaign Maker")
 my_gui = TheGui(root)
 root.mainloop()
