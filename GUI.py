@@ -100,16 +100,20 @@ class TheGui:
         self.seal = 0
         print self.seal
     def OpenExplorer(self):
+        self.entIn.insert(END,"")
         Tkinter.Tk().withdraw() # Close the root window
         in_path = tkFileDialog.askopenfilename()
         self.wow = in_path
         ##self.outFilePath.insert(1.0, self.wow)
+        self.entIn.insert(END, self.wow)
         print self.wow , "\n"
     
     def OpenExplorer1(self):
+        self.entOut.insert(END,"")
         Tkinter.Tk().withdraw() # Close the root window
         in_path1 = tkFileDialog.askopenfilename()
         self.wink = in_path1
+        self.entOut.insert(END, self.wink)
         print self.wink , "\n"
     
     def test(self,main_image, logo_image):
