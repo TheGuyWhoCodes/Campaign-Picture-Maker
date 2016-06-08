@@ -2,7 +2,7 @@
 Small little banner and logo pasting program made in Python 
 
 # What Does it Do
-Puts pictures on pictures not that hard to think about
+It will put a banner or logo of your choice on a background of your choice. Values can be edited within the program the global variables.
 
 #Needed Add-On's:
 PIL
